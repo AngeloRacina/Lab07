@@ -7,6 +7,9 @@ public class TestModel {
 		Model model = new Model();
 		System.out.println(model.getNercList());
 
+		
+		for(PowerOutages po : model.trova("MAIN", 80, 1))
+		System.out.println(po.toString());
 	}
 
 }

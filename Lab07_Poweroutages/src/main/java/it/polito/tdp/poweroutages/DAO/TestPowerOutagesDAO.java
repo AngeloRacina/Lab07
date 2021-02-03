@@ -2,6 +2,8 @@ package it.polito.tdp.poweroutages.DAO;
 
 import java.sql.Connection;
 
+import it.polito.tdp.poweroutages.model.PowerOutages;
+
 public class TestPowerOutagesDAO {
 
 	public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class TestPowerOutagesDAO {
 			
 			PowerOutageDAO dao = new PowerOutageDAO() ;
 			
-			System.out.println(dao.getNercList()) ;
+			for(PowerOutages po : dao.getWorstCase("MAIN"))
+				System.out.println(po.toString()+"\n") ;
 
 		} catch (Exception e) {
 			System.err.println("Test FAILED");
